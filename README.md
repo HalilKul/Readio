@@ -20,7 +20,7 @@ Bu proje, sesli kitap dinleme platformu için modern ve kullanıcı dostu bir we
 
 1. Projeyi klonlayın:
 ```bash
-git clone https://github.com/kulha/Readio.git
+git clone https://github.com/HalilKul/Readio.git
 ```
 
 2. İndirilen klasöre gidin:
