@@ -1,4 +1,4 @@
-# Sesli Kitap Projesi
+# Readio - Sesli Kitap Platformu
 
 Bu proje, sesli kitap dinleme platformu için modern ve kullanıcı dostu bir web arayüzü sunmaktadır.
 
@@ -20,12 +20,12 @@ Bu proje, sesli kitap dinleme platformu için modern ve kullanıcı dostu bir we
 
 1. Projeyi klonlayın:
 ```bash
-git clone https://github.com/kullaniciadi/Sesli-Kitap-2.git
+git clone https://github.com/kulha/Readio.git
 ```
 
 2. İndirilen klasöre gidin:
 ```bash
-cd Sesli-Kitap-2
+cd Readio
 ```
 
 3. `index.html` dosyasını tarayıcınızda açın.
