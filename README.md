@@ -30,10 +30,6 @@ cd Readio
 
 3. `index.html` dosyasını tarayıcınızda açın.
 
-## Ekran Görüntüleri
-
-![Ana Sayfa](img/screenshot.png)
-
 ## Lisans
 
 Bu proje MIT lisansı altında lisanslanmıştır. 
