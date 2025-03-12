@@ -1,0 +1,2912 @@
+:root {
+    --brand-color: #FF5722;  /* Daha canlı turuncu */
+    --dark-color: #1a1a1a;
+    --light-color: #ffffff;
+    --gray-color: #f5f5f5;
+    --text-color: #333333;
+    --light-blue: #e0f7ff;
+    --light-pink: #ffebf0;
+    --light-yellow: #fff9e0;
+    --header-height: 60px;
+    --container-padding: 20px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+    font-family: 'Arial', sans-serif;
+}
+
+html {
+    font-size: 16px;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    line-height: 1.5;
+    overflow-x: hidden;
+    color: var(--text-color);
+    background-color: var(--light-color);
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+/* Container Styles */
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--container-padding);
+}
+
+/* Header Responsive Styles */
+.main-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: var(--header-height);
+    background-color: var(--dark-color);
+    z-index: 1000;
+    transition: all 0.3s ease;
+}
+
+.header-container {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 var(--container-padding);
+}
+
+.logo {
+    flex: 0 0 auto;
+    margin-right: 2rem;
+}
+
+.logo img {
+    height: 30px;
+}
+
+.nav-links {
+    display: none;
+}
+
+.auth-buttons {
+    display: none;
+}
+
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: var(--text-light);
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 0.5rem;
+    transition: color 0.2s ease;
+}
+
+.menu-toggle:hover {
+    color: var(--brand-color);
+}
+
+.menu-toggle span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background-color: currentColor;
+    position: relative;
+    transition: background-color 0.2s ease;
+}
+
+.menu-toggle span::before,
+.menu-toggle span::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: currentColor;
+    transition: transform 0.2s ease;
+}
+
+.menu-toggle span::before {
+    transform: translateY(-8px);
+}
+
+.menu-toggle span::after {
+    transform: translateY(8px);
+}
+
+.menu-toggle.active span {
+    background-color: transparent;
+}
+
+.menu-toggle.active span::before {
+    transform: rotate(45deg);
+}
+
+.menu-toggle.active span::after {
+    transform: rotate(-45deg);
+}
+
+/* Mobile Navigation */
+.mobile-nav {
+    position: fixed;
+    top: var(--header-height);
+    left: 0;
+    width: 100%;
+    height: calc(100vh - var(--header-height));
+    background: rgba(0, 0, 0, 0.95);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    transform: translateX(-100%);
+    transition: transform 0.3s ease-in-out;
+    z-index: 999;
+    padding: 2rem;
+    overflow-y: auto;
+}
+
+.mobile-nav.active {
+    transform: translateX(0);
+}
+
+.mobile-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.mobile-nav li {
+    margin-bottom: 1.5rem;
+}
+
+.mobile-nav a {
+    color: var(--text-light);
+    text-decoration: none;
+    font-size: 1.2rem;
+    display: block;
+    padding: 0.5rem 0;
+    transition: color 0.2s ease;
+}
+
+.mobile-nav a:hover {
+    color: var(--brand-color);
+}
+
+/* Book Grid Responsive */
+.book-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 15px;
+    padding: var(--container-padding);
+}
+
+.book-card {
+    width: 100%;
+    border-radius: 8px;
+}
+
+.book-cover {
+    aspect-ratio: 2/3;
+    width: 100%;
+    object-fit: cover;
+}
+
+/* Section Responsive */
+.section-header {
+    padding: 20px var(--container-padding);
+}
+
+.section-header h2 {
+    font-size: 1.5rem;
+}
+
+/* Promo Section Responsive */
+.promo-section {
+    background-color: var(--dark-color);
+    color: var(--light-color);
+    padding: 40px 20px;
+    position: relative;
+    z-index: 1;
+}
+
+.promo-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    position: relative;
+}
+
+.promo-content {
+    flex: 1;
+    min-width: 300px;
+    padding-right: 40px;
+    position: relative;
+    z-index: 2;
+}
+
+.promo-title {
+    font-size: 3.5rem;
+    color: var(--brand-color);
+    margin-bottom: 20px;
+}
+
+.promo-text {
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+    line-height: 1.5;
+    max-width: 600px;
+}
+
+.promo-button {
+    display: inline-block;
+    background-color: var(--light-color);
+    color: var(--dark-color);
+    font-weight: bold;
+    padding: 12px 30px;
+    border-radius: 50px;
+    transition: all 0.3s;
+}
+
+.promo-button:hover {
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+.promo-image {
+    position: absolute;
+    right: 25%;
+    top: -20px;
+    width: 15%;
+    max-width: 200px;
+    z-index: 10;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.promo-image:hover {
+    filter: drop-shadow(0 10px 15px rgba(0, 0, 0, 0.5));
+}
+
+.featured-book {
+    max-width: 100%;
+    border-radius: 10px;
+    overflow: hidden;
+    height: 280px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.featured-book::after {
+    content: 'Tutunamayanlar';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+    color: white;
+    padding: 15px 10px 10px;
+    font-size: 12px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.featured-book:hover {
+    transform: translateY(-10px) rotate(2deg);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+}
+
+.featured-book img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: all 0.3s ease;
+}
+
+.featured-book:hover img {
+    filter: brightness(1.1);
+}
+
+/* Mobil için düzenleme */
+@media (max-width: 992px) {
+    .promo-image {
+        position: relative;
+        top: 0;
+        right: auto;
+        width: 100%;
+        max-width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+    
+    .featured-book {
+        height: 280px;
+        max-width: 200px;
+    }
+}
+
+/* Features Cards Responsive */
+.features-container {
+    flex-direction: column;
+    padding: var(--container-padding);
+}
+
+.feature-card {
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+/* Authors Grid Responsive */
+.authors-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 15px;
+    padding: var(--container-padding);
+}
+
+.author-card {
+    width: 100%;
+    aspect-ratio: 1;
+}
+
+/* Footer Styles */
+footer {
+    background: #1C1E22;
+    color: #fff;
+    padding: 2rem 0;
+    font-family: 'Inter', sans-serif;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.footer-section {
+    display: flex;
+    gap: 2rem;
+}
+
+.footer-section h4 {
+    display: none;
+}
+
+.footer-section ul {
+    display: flex;
+    gap: 1.5rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.footer-section ul li a {
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    padding: 0.5rem 0;
+}
+
+.footer-section ul li a:hover {
+    color: #fff;
+}
+
+.footer-bottom {
+    border-top: none;
+    margin-top: 0;
+    padding-top: 0;
+}
+
+.footer-legal {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.footer-legal a {
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
+}
+
+.footer-legal a:hover {
+    color: #fff;
+}
+
+/* Sosyal medya ikonları için stil */
+.social-icons {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.social-icons a {
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    transition: color 0.3s ease;
+    padding: 0.5rem;
+    border-radius: 50%;
+}
+
+.social-icons a:hover {
+    color: #fff;
+}
+
+/* Newsletter alanı için stil */
+.newsletter {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.newsletter input {
+    padding: 0.5rem 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 4px;
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    font-size: 0.9rem;
+}
+
+.newsletter button {
+    padding: 0.5rem 1rem;
+    background: #fff;
+    color: #1C1E22;
+    border: none;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.newsletter button:hover {
+    background: rgba(255, 255, 255, 0.9);
+}
+
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        gap: 2rem;
+        text-align: center;
+    }
+
+    .footer-section {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .footer-section ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-legal {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .newsletter {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .newsletter input {
+        width: 100%;
+    }
+
+    .newsletter button {
+        width: 100%;
+    }
+}
+
+/* Modal Responsive */
+.modal-content {
+    width: 95%;
+    margin: 20px auto;
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+.book-detail {
+    flex-direction: column;
+}
+
+.book-detail-cover {
+    max-width: 250px;
+    margin: 0 auto;
+}
+
+/* Tablet Breakpoint */
+@media (min-width: 768px) {
+    .nav-links {
+        display: flex;
+        gap: 30px;
+    }
+
+    .auth-buttons {
+        display: flex;
+        gap: 15px;
+    }
+
+    .menu-toggle {
+        display: none;
+    }
+
+    .book-grid {
+        grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    }
+
+    .promo-container {
+        flex-direction: row;
+    }
+
+    .promo-content {
+        text-align: left;
+    }
+
+    .features-container {
+        flex-direction: row;
+    }
+
+    .footer-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Desktop Breakpoint */
+@media (min-width: 1024px) {
+    .book-grid {
+        grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    }
+
+    .promo-title {
+        font-size: 3.5rem;
+    }
+
+    .footer-container {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .modal-content {
+        width: 80%;
+    }
+
+    .book-detail {
+        flex-direction: row;
+        gap: 30px;
+    }
+}
+
+/* Large Desktop Breakpoint */
+@media (min-width: 1200px) {
+    .container {
+        padding: 0;
+    }
+
+    .book-grid {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    }
+}
+
+/* Touch Device Optimizations */
+@media (hover: none) {
+    .book-card:hover,
+    .author-card:hover,
+    .button:hover {
+        transform: none;
+    }
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Loading States */
+.loading {
+    position: relative;
+}
+
+.loading::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Accessibility */
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+
+/* Print Styles */
+@media print {
+    .main-header,
+    .footer,
+    .modal {
+        display: none;
+    }
+
+    body {
+        background: none;
+    }
+
+    .container {
+        width: 100%;
+        max-width: none;
+    }
+}
+
+/* Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --light-color: #1a1a1a;
+        --dark-color: #ffffff;
+        --text-color: #ffffff;
+        --gray-color: #333333;
+    }
+
+    .book-card,
+    .modal-content {
+        background-color: #262626;
+    }
+}
+
+/* Header Styles */
+.main-header {
+    background-color: var(--dark-color);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+.logo {
+    flex: 0 0 auto;
+    margin-right: 2rem;
+}
+
+.logo img {
+    height: 32px;
+    width: auto;
+}
+
+.main-nav {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links li {
+    list-style: none;
+}
+
+.nav-links a {
+    color: var(--light-color);
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: var(--brand-color);
+}
+
+.login-link {
+    color: var(--light-color);
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.login-link:hover {
+    background-color: rgba(255,255,255,0.1);
+}
+
+.cta-button {
+    background: linear-gradient(135deg, #FF5722, #FF9800);
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 25px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.cta-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.search-icon {
+    margin-left: 1rem;
+    cursor: pointer;
+    color: var(--light-color);
+    transition: color 0.3s ease;
+}
+
+.search-icon:hover {
+    color: var(--brand-color);
+}
+
+/* Search Overlay Styles */
+.search-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.8);
+    z-index: 1100;
+    justify-content: center;
+    align-items: flex-start;
+    padding-top: 4rem;
+}
+
+.search-container {
+    background-color: var(--light-color);
+    width: 90%;
+    max-width: 800px;
+    border-radius: 8px;
+    padding: 2rem;
+}
+
+.search-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.search-header h2 {
+    font-size: 1.5rem;
+    color: var(--text-color);
+}
+
+.close-search {
+    font-size: 2rem;
+    cursor: pointer;
+    color: var(--text-color);
+}
+
+.search-form {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.search-form input {
+    flex: 1;
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+.search-form button {
+    background-color: var(--brand-color);
+    color: var(--light-color);
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.search-results {
+    max-height: 60vh;
+    overflow-y: auto;
+}
+
+.search-result-card {
+    display: flex;
+    gap: 1rem;
+    padding: 1rem;
+    border-bottom: 1px solid #eee;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.search-result-card:hover {
+    background-color: #f9f9f9;
+}
+
+.result-cover {
+    width: 60px;
+    min-width: 60px;
+    height: 90px;
+    overflow: hidden;
+    border-radius: 4px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.result-cover img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.result-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.result-info h3 {
+    font-size: 1rem;
+    margin-bottom: 0.25rem;
+    color: var(--text-color);
+}
+
+.result-info p {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 0.5rem;
+}
+
+.result-meta {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.8rem;
+    color: #888;
+}
+
+.result-rating {
+    color: var(--brand-color);
+    font-weight: 500;
+}
+
+.no-results {
+    padding: 2rem;
+    text-align: center;
+    color: #666;
+    font-style: italic;
+}
+
+.search-result-item {
+    display: flex;
+    gap: 1rem;
+    padding: 1rem;
+    border-bottom: 1px solid #eee;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Book Slider Styles */
+.book-slider {
+    background-color: var(--dark-color);
+    padding: 30px 0;
+    overflow: hidden;
+    position: relative;
+    margin-top: 60px;
+}
+
+.slider-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    position: relative;
+}
+
+.book-row {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 10px; /* Margin'i azalttım */
+    overflow-x: auto;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    animation: slideBooks 25s linear infinite;
+    padding: 5px 0; /* Padding'i azalttım */
+}
+
+@keyframes slideBooks {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+.book-row::-webkit-scrollbar {
+    display: none;
+}
+
+/* Hover olduğunda animasyonu durdur */
+.book-row:hover {
+    animation-play-state: paused;
+}
+
+.book-item {
+    flex: 0 0 auto;
+    width: 80px;  /* Genişliği daha da azalttım */
+    height: 120px; /* Yüksekliği daha da azalttım */
+    border-radius: 8px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    position: relative;
+}
+
+.book-item:hover {
+    transform: scale(1.08) translateY(-5px);
+    cursor: pointer;
+    z-index: 10;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+}
+
+.book-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    display: block;
+    transition: all 0.3s ease;
+}
+
+.book-item:hover img {
+    filter: brightness(1.1);
+}
+/* Kitap üzerine gelince bilgi göster */
+.book-item::after {
+    content: attr(data-title);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+    color: white;
+    padding: 8px 3px;
+    font-size: 8px;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
+
+.book-item:hover::after {
+    opacity: 1;
+}
+
+/* Discover Section Styles */
+.discover-section {
+    background-color: var(--light-color);
+    padding: 80px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.discover-container {
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.discover-title {
+    font-size: 4rem;
+    color: var(--brand-color);
+    margin-bottom: 50px;
+    font-weight: 800;
+    line-height: 1.1;
+    letter-spacing: -1px;
+    text-align: center;
+}
+
+.discover-features {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    margin: 0 auto;
+}
+
+.discover-features li {
+    display: flex;
+    align-items: center;
+    font-size: 1.2rem;
+    color: var(--text-color);
+    font-weight: 500;
+    background-color: #f8f8f8;
+    padding: 15px 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    transition: all 0.3s ease;
+    min-width: 200px;
+    flex: 1;
+    max-width: 300px;
+}
+
+.discover-features li:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    background-color: #fff;
+}
+
+.check-icon {
+    color: var(--brand-color);
+    margin-right: 15px;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .discover-title {
+        font-size: 3rem;
+    }
+    
+    .discover-features {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .discover-features li {
+        width: 100%;
+        max-width: 300px;
+    }
+}
+
+/* Pricing Section */
+.pricing {
+    padding: 60px 20px;
+    background-color: var(--light-color);
+}
+
+.pricing-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.pricing-card {
+    flex: 1;
+    min-width: 250px;
+    max-width: 300px;
+    border: 1px solid #eee;
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s;
+    display: flex;
+    flex-direction: column;
+}
+
+.pricing-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.pricing-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.pricing-description {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 20px;
+    min-height: 40px;
+}
+
+.pricing-price {
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--brand-color);
+    margin-bottom: 5px;
+}
+
+.pricing-period {
+    font-size: 1rem;
+    font-weight: normal;
+    color: #666;
+}
+
+.pricing-after-text {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 15px;
+}
+
+.pricing-promo {
+    background-color: var(--light-blue);
+    color: var(--dark-color);
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    display: inline-block;
+    margin-bottom: 20px;
+}
+
+.pricing-features {
+    margin-bottom: 30px;
+    flex-grow: 1;
+}
+
+.pricing-features li {
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+}
+
+.pricing-features .icon {
+    margin-right: 10px;
+    font-size: 1.1rem;
+}
+
+.pricing-button {
+    background-color: var(--dark-color);
+    color: var(--light-color);
+    border: none;
+    padding: 12px;
+    border-radius: 25px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    text-align: center;
+    display: block;
+}
+
+.pricing-button:hover {
+    background-color: var(--brand-color);
+}
+
+/* Storytel Original Section */
+.storytel-original {
+    padding: 60px 20px;
+    background-color: var(--light-color);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.storytel-original-content {
+    flex: 1;
+    min-width: 300px;
+    padding-right: 40px;
+}
+
+.storytel-original h2 {
+    font-size: 2.5rem;
+    color: var(--brand-color);
+    margin-bottom: 20px;
+}
+
+.storytel-original p {
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+    line-height: 1.5;
+}
+
+.storytel-original .cta-button {
+    background-color: var(--brand-color);
+    color: var(--light-color);
+}
+
+.storytel-original .cta-button:hover {
+    background-color: #e55600;
+}
+
+.storytel-original-books {
+    flex: 1;
+    min-width: 300px;
+}
+
+.storytel-original .book-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+/* Storytel original bölümünde kitap kapağı boyutları sabitlendi */
+.storytel-original .book-card {
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    height: 220px; /* Sabit yükseklik */
+}
+
+.storytel-original .book-cover {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Anywhere Anytime Section */
+.anywhere-anytime {
+    background-color: #fff;
+    padding: 80px 0;
+    overflow: hidden;
+}
+
+.anywhere-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+}
+
+.anywhere-content {
+    flex: 0 0 45%;
+    padding-right: 40px;
+}
+
+.anywhere-title {
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: #ff5722;
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+.anywhere-text {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+.anywhere-button {
+    display: inline-block;
+    background-color: #ff5722;
+    color: white;
+    padding: 12px 30px;
+    border-radius: 30px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.anywhere-button:hover {
+    background-color: #e64a19;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.anywhere-images {
+    flex: 0 0 50%;
+}
+
+.image-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.image-top-row, .image-bottom-row {
+    display: flex;
+    gap: 20px;
+    
+}
+
+.image-item.large {
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.image-item.large:hover {
+    transform: translateY(-5px);
+}
+
+.image-item.large img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Features Cards Section */
+.features-cards {
+    background-color: var(--dark-color);
+    padding: 60px 20px;
+}
+
+.features-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto 40px;
+}
+
+.feature-card {
+    flex: 1;
+    min-width: 300px;
+    border-radius: 10px;
+    padding: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.feature-card.light-blue {
+    background-color: var(--light-blue);
+}
+
+.feature-card.light-pink {
+    background-color: var(--light-pink);
+}
+
+.feature-card.light-yellow {
+    background-color: var(--light-yellow);
+}
+
+.feature-card h2 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--dark-color);
+}
+
+.feature-expand-button {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: var(--dark-color);
+    color: var(--light-color);
+    border: none;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.features-cta {
+    text-align: center;
+}
+
+.features-cards .cta-button {
+    background-color: var(--light-color);
+    color: var(--dark-color);
+    padding: 15px 30px;
+    font-size: 1.1rem;
+}
+
+.features-cards .cta-button:hover {
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+/* Book Showcase Section */
+.book-showcase {
+    padding: 60px 20px;
+    background-color: var(--light-color);
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    position: relative;
+}
+
+.section-header h2 {
+    font-size: 1.8rem;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.section-header h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 50px;
+    height: 3px;
+    background-color: var(--brand-color);
+    transition: width 0.3s ease;
+}
+
+.section-header:hover h2::after {
+    width: 100px;
+}
+
+.show-all {
+    color: var(--brand-color);
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    transition: transform 0.3s ease;
+}
+
+.show-all:hover {
+    transform: translateX(5px);
+}
+
+.arrow {
+    margin-left: 5px;
+    transition: transform 0.3s ease;
+}
+
+.show-all:hover .arrow {
+    transform: translateX(3px);
+}
+
+/* Modern Card Styles */
+.book-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 25px;
+    padding: 10px 0;
+}
+
+.book-card {
+    background: var(--light-color);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+/* Kitap kapakları için sabit yükseklik ayarlandı */
+.book-card .book-cover {
+    width: 100%;
+    height: 240px; /* Kitap kapakları için sabit yükseklik */
+    object-fit: cover;
+    display: block;
+    transition: all 0.3s ease;
+}
+
+.book-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+.book-card:hover .book-cover {
+    transform: scale(1.05);
+}
+
+.book-info {
+    padding: 15px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    background: white;
+    position: relative;
+    z-index: 1;
+}
+
+.book-info h3 {
+    font-size: 1rem;
+    margin-bottom: 8px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    line-height: 1.3;
+    height: 2.6em;
+}
+
+/* Yırtıcı Kuşlar Zamanı kitabı için özel stil */
+.book-card:has(img[alt="Yırtıcı Kuşlar Zamanı"]) .book-info h3 {
+    font-size: 0.9rem;
+}
+
+.book-info p {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.book-rating {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    font-size: 0.8rem;
+}
+
+.star {
+    color: #ffc107;
+    margin-right: 5px;
+}
+
+.book-listen-button {
+    margin-top: auto;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background-color: var(--light-color);
+    border: 1px solid #eee;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+}
+
+.book-listen-button:hover {
+    background-color: var(--brand-color);
+    color: var(--light-color);
+    border-color: var(--brand-color);
+    transform: scale(1.1);
+}
+
+.headphones-icon {
+    font-size: 1rem;
+}
+
+/* Spotlight Section için özel stiller */
+.book-showcase:has(.section-header h2:contains("Spot Işıkları Altında")) {
+    background-color: #f9f9f9;
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    margin-top: 40px;
+    margin-bottom: 40px;
+    transition: all 0.5s ease;
+    overflow: hidden;
+}
+
+.book-showcase:has(.section-header h2:contains("Spot Işıkları Altında")).animate-in .book-card {
+    animation: fadeInUp 0.6s ease-out forwards;
+    opacity: 0;
+}
+
+.book-showcase:has(.section-header h2:contains("Spot Işıkları Altında")).animate-in .book-card:nth-child(1) { animation-delay: 0.1s; }
+.book-showcase:has(.section-header h2:contains("Spot Işıkları Altında")).animate-in .book-card:nth-child(2) { animation-delay: 0.2s; }
+.book-showcase:has(.section-header h2:contains("Spot Işıkları Altında")).animate-in .book-card:nth-child(3) { animation-delay: 0.3s; }
+.book-showcase:has(.section-header h2:contains("Spot Işıkları Altında")).animate-in .book-card:nth-child(4) { animation-delay: 0.4s; }
+.book-showcase:has(.section-header h2:contains("Spot Işıkları Altında")).animate-in .book-card:nth-child(5) { animation-delay: 0.5s; }
+.book-showcase:has(.section-header h2:contains("Spot Işıkları Altında")).animate-in .book-card:nth-child(6) { animation-delay: 0.6s; }
+.book-showcase:has(.section-header h2:contains("Spot Işıkları Altında")).animate-in .book-card:nth-child(7) { animation-delay: 0.7s; }
+.book-showcase:has(.section-header h2:contains("Spot Işıkları Altında")).animate-in .book-card:nth-child(8) { animation-delay: 0.8s; }
+.book-showcase:has(.section-header h2:contains("Spot Işıkları Altında")).animate-in .book-card:nth-child(9) { animation-delay: 0.9s; }
+.book-showcase:has(.section-header h2:contains("Spot Işıkları Altında")).animate-in .book-card:nth-child(10) { animation-delay: 1s; }
+
+.book-showcase:has(.section-header h2:contains("Spot Işıkları Altında")) .book-grid {
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    position: relative;
+}
+
+.book-showcase:has(.section-header h2:contains("Spot Işıkları Altında")) .book-card {
+    border: 1px solid #eee;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.book-showcase:has(.section-header h2:contains("Spot Işıkları Altında")) .book-card .book-cover {
+    height: 220px;
+}
+
+/* Yırtıcı Kuşlar Zamanı kitabı için özel stil */
+.book-card:has(img[alt="Yırtıcı Kuşlar Zamanı"]) {
+    position: relative;
+    overflow: hidden;
+}
+
+.book-card:has(img[alt="Yırtıcı Kuşlar Zamanı"]) .book-cover {
+    height: 200px; /* Daha küçük kapak */
+}
+
+.book-card:has(img[alt="Yırtıcı Kuşlar Zamanı"]) .book-info h3 {
+    font-size: 0.85rem;
+    -webkit-line-clamp: 1;
+    height: auto;
+}
+
+.book-card:has(img[alt="Yırtıcı Kuşlar Zamanı"]):hover .book-cover {
+    transform: scale(1.08);
+}
+
+/* Popular Authors Section */
+.popular-authors {
+    padding: 60px 20px;
+    background-color: var(--light-color);
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.popular-authors h2 {
+    font-size: 2.5rem;
+    color: var(--brand-color);
+    margin-bottom: 40px;
+}
+
+.authors-grid {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    margin-bottom: 40px;
+    padding: 10px 0;
+}
+
+.authors-grid::-webkit-scrollbar {
+    display: none;
+}
+
+.author-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    width: 200px;
+    height: 280px;
+    flex-shrink: 0;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.author-card img, .author-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.85);
+    transition: all 0.3s ease;
+}
+
+.author-card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        180deg,
+        rgba(0, 0, 0, 0) 0%,
+        rgba(0, 0, 0, 0.5) 100%
+    );
+}
+
+.author-name {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    color: white;
+    font-size: 1.5rem;
+    font-weight: 600;
+    z-index: 2;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Hover efekti */
+.author-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.author-card:hover img {
+    filter: brightness(0.75);
+}
+
+.authors-description {
+    text-align: left;
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+
+.authors-links {
+    display: flex;
+    gap: 20px;
+}
+
+.author-link, .narrator-link {
+    display: inline-block;
+    padding: 12px 25px;
+    border: 1px solid #ddd;
+    border-radius: 50px;
+    transition: all 0.3s;
+}
+
+.author-link:hover, .narrator-link:hover {
+    border-color: var(--brand-color);
+    color: var(--brand-color);
+}
+
+/* Modals */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.8);
+    z-index: 1200;
+    overflow-y: auto;
+}
+
+.modal-content {
+    position: relative;
+    background-color: var(--light-color);
+    margin: 4rem auto;
+    width: 90%;
+    max-width: 1000px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.book-modal {
+    padding: 2rem;
+}
+
+.close-modal {
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+    font-size: 2rem;
+    color: var(--text-color);
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    line-height: 1;
+    z-index: 1;
+}
+
+.book-detail {
+    display: flex;
+    gap: 2rem;
+}
+
+.book-detail-cover {
+    flex: 0 0 300px;
+}
+
+.book-detail-cover img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.book-detail-info {
+    flex: 1;
+}
+
+.book-detail-title {
+    font-size: 2rem;
+    margin: 0 0 0.5rem;
+    color: var(--text-color);
+}
+
+.book-detail-author {
+    font-size: 1.2rem;
+    color: #666;
+    margin-bottom: 1.5rem;
+}
+
+.book-detail-meta {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    background-color: #f5f5f5;
+    border-radius: 4px;
+}
+
+.book-detail-meta div {
+    display: flex;
+    justify-content: space-between;
+}
+
+.book-detail-meta span:first-child {
+    color: #666;
+}
+
+.book-detail-description {
+    margin-bottom: 2rem;
+    line-height: 1.6;
+    color: var(--text-color);
+}
+
+.book-purchase-options {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+}
+
+.purchase-option {
+    padding: 1.5rem;
+    border-radius: 8px;
+    background-color: #f5f5f5;
+    text-align: center;
+}
+
+.audio-option {
+    background-color: var(--light-blue);
+}
+
+.ebook-option {
+    background-color: var(--light-pink);
+}
+
+.purchase-option h4 {
+    margin: 0 0 1rem;
+    color: var(--text-color);
+}
+
+.purchase-price {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: var(--text-color);
+}
+
+.listen-button,
+.buy-button {
+    width: 100%;
+    padding: 0.75rem;
+    border: none;
+    border-radius: 4px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.listen-button {
+    background-color: var(--brand-color);
+    color: var(--light-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.listen-button:hover {
+    background-color: #e64a19;
+}
+
+.buy-button {
+    background-color: var(--brand-color);
+    color: var(--light-color);
+}
+
+.buy-button:hover {
+    background-color: #e64a19;
+}
+
+.play-icon {
+    font-size: 1.2rem;
+}
+
+@media (max-width: 768px) {
+    .book-detail {
+        flex-direction: column;
+    }
+
+    .book-detail-cover {
+        flex: 0 0 auto;
+        max-width: 300px;
+        margin: 0 auto;
+    }
+
+    .book-detail-meta {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Auth Modal Styles */
+.auth-modal {
+    max-width: 500px;
+}
+
+.auth-container {
+    padding: 20px 0;
+}
+
+.auth-container h2 {
+    font-size: 1.8rem;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="password"] {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+}
+
+.form-group.remember-me,
+.form-group.terms {
+    display: flex;
+    align-items: center;
+}
+
+.form-group.remember-me input,
+.form-group.terms input {
+    margin-right: 10px;
+}
+
+/* Modern Giriş ve Abonelik Modalları için CSS */
+.auth-modal,
+.subscription-modal {
+    background-color: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(5px);
+    transition: all 0.3s ease;  
+}
+
+.auth-container,
+.subscription-container {
+    background-color: #fff;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    padding: 30px;
+    max-width: 500px;
+    margin: 0 auto;
+    position: relative;
+    animation: modalFadeIn 0.5s;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.book-showcase {
+    animation: fadeInUp 0.8s ease-out;
+}
+.auth-container h2,
+.subscription-container h2 {
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--brand-color);
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.close-modal {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 28px;
+    font-weight: 300;
+    color: #999;
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    z-index: 10;
+}
+
+.close-modal:hover {
+    color: var(--brand-color);
+    background-color: rgba(0, 0, 0, 0.05);
+    transform: rotate(90deg);
+}
+
+.form-group {
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #666;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="password"] {
+    width: 100%;
+    padding: 14px 16px;
+    border: 1px solid #e0e0e0;
+    border-radius: 12px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    background-color: #f9f9f9;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: var(--brand-color);
+    box-shadow: 0 0 0 3px rgba(255, 90, 0, 0.1);
+    background-color: #fff;
+}
+
+.form-group.remember-me,
+.form-group.terms {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.form-group.remember-me input,
+.form-group.terms input {
+    margin-right: 10px;
+}
+
+.auth-button {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 12px;
+    background-color: var(--brand-color);
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.auth-button:hover {
+    background-color: #e55600;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(255, 90, 0, 0.2);
+}
+
+.auth-links {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 14px;
+}
+
+.auth-links a {
+    color: var(--brand-color);
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+.social-login {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.social-login p {
+    margin-bottom: 15px;
+    color: #666;
+}
+
+.social-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.social-button {
+    flex: 1;
+    padding: 12px 15px;
+    border: 1px solid #e0e0e0;
+    border-radius: 12px;
+    background-color: white;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 120px;
+}
+
+.social-button:hover {
+    background-color: #f9f9f9;
+    transform: translateY(-2px);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+.social-button.google:hover {
+    border-color: #4285F4;
+    color: #4285F4;
+}
+
+.social-button.facebook:hover {
+    border-color: #3b5998;
+    color: #3b5998;
+}
+
+.social-button.apple:hover {
+    border-color: #000;
+    color: #000;
+}
+
+/* Subscription Modal Styles */
+.subscription-modal {
+    max-width: 800px;
+}
+
+.subscription-options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.subscription-option {
+    flex: 1;
+    min-width: 220px;
+    padding: 25px;
+    border-radius: 16px;
+    background-color: white;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    border: 1px solid #e0e0e0;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.subscription-option:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    border-color: var(--brand-color);
+}
+
+.subscription-option.featured {
+    border: 2px solid var(--brand-color);
+    background-color: rgba(255, 90, 0, 0.03);
+}
+
+.featured-tag {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: var(--brand-color);
+    color: white;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 5px 12px;
+    border-bottom-left-radius: 10px;
+    transform: translateY(0);
+    transition: all 0.3s ease;
+    z-index: 1;
+}
+
+.subscription-option:hover .featured-tag {
+    transform: translateY(0) scale(1.05);
+}
+
+.subscription-option h3 {
+    margin: 0 0 10px;
+    font-size: 20px;
+    color: #333;
+}
+
+.subscription-option p {
+    margin: 0 0 20px;
+    color: #666;
+    font-size: 14px;
+}
+
+.subscription-price {
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--brand-color);
+    margin-bottom: 5px;
+    display: flex;
+    align-items: baseline;
+}
+
+.subscription-price span {
+    font-size: 14px;
+    font-weight: 400;
+    color: #666;
+    margin-left: 5px;
+}
+
+.subscription-after {
+    font-size: 13px;
+    color: #999;
+    margin-bottom: 15px;
+}
+
+.subscription-promo {
+    display: inline-block;
+    background-color: rgba(255, 90, 0, 0.1);
+    color: var(--brand-color);
+    font-size: 12px;
+    font-weight: 600;
+    padding: 5px 10px;
+    border-radius: 20px;
+    margin-bottom: 20px;
+    transition: all 0.3s ease;
+}
+
+.subscription-option:hover .subscription-promo {
+    background-color: rgba(255, 90, 0, 0.2);
+}
+
+.subscription-features {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 25px;
+}
+
+.subscription-features li {
+    margin-bottom: 10px;
+    padding-left: 25px;
+    position: relative;
+    font-size: 14px;
+}
+
+.subscription-features li:before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: var(--brand-color);
+    font-weight: bold;
+}
+
+.subscription-button {
+    width: 100%;
+    background-color: var(--brand-color);
+    color: white;
+    border: none;
+    padding: 15px;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.subscription-button:hover {
+    background-color: #e55600;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(255, 90, 0, 0.2);
+}
+
+.subscription-info {
+    text-align: center;
+    color: #666;
+    font-size: 13px;
+    margin-top: 20px;
+}
+
+.subscription-info p {
+    margin-bottom: 8px;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .auth-modal,
+    .subscription-modal {
+        width: 95%;
+        padding: 20px;
+    }
+    
+    .subscription-option {
+        flex: 100%;
+        min-width: 100%;
+    }
+    
+    .auth-links {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .social-buttons {
+        flex-wrap: wrap;
+    }
+    
+    .social-button {
+        flex: 1 0 100%;
+        max-width: none;
+        margin-bottom: 10px;
+    }
+}
+/* Responsive Styles */
+@media (max-width: 992px) {
+    .book-item {
+        width: 70px;
+        height: 110px;
+    }
+    
+    .book-card .book-cover {
+        height: 200px;
+    }
+    
+    .hero {
+        flex-direction: column;
+    }
+    
+    .hero-content {
+        padding-right: 0;
+        margin-bottom: 40px;
+    }
+    
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+    
+    .storytel-original {
+        flex-direction: column;
+    }
+    
+    .storytel-original-content {
+        padding-right: 0;
+        margin-bottom: 40px;
+    }
+    
+    .pricing-card {
+        max-width: 100%;
+    }
+    
+    .promo-container {
+        flex-direction: column;
+    }
+    
+    .promo-content {
+        padding-right: 0;
+        margin-bottom: 30px;
+    }
+    
+    .anywhere-anytime {
+        flex-direction: column;
+    }
+    
+    .anywhere-content {
+        padding-right: 0;
+        margin-bottom: 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    .book-grid {
+        grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+    }
+    
+    .book-card .book-cover {
+    height: 180px;
+    }
+    
+    .header-container {
+        padding: 15px;
+    }
+    
+    .main-nav {
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background-color: var(--dark-color);
+        margin-left: 0;
+        display: none;
+    }
+    
+    .main-nav.active {
+        display: block;
+    }
+    
+    .nav-links {
+        flex-direction: column;
+        padding: 20px;
+    }
+    
+    .nav-links li {
+        margin: 10px 0;
+    }
+    
+    .menu-toggle {
+        display: block;
+    }
+    
+    .auth-buttons {
+        flex-direction: column;
+        align-items: flex-end;
+    }
+    
+    .login-link {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+    
+    .promo-title {
+        font-size: 2.5rem;
+    }
+    
+    .footer-section {
+        flex-basis: 50%;
+    }
+    
+    .footer-bottom {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .social-links {
+        margin-top: 20px;
+        text-align: left;
+    }
+    
+    .discover-title {
+        font-size: 3rem;
+    }
+    
+    .discover-features li {
+        font-size: 1.2rem;
+    }
+    
+    .book-slider {
+        padding: 15px 0;
+    }
+    
+    .book-row {
+        padding: 3px 0;
+        margin-bottom: 8px;
+        gap: 10px;
+    }
+    
+    .book-item {
+        width: 60px;
+        height: 90px;
+    }
+}
+
+@media (max-width: 576px) {
+    .book-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .book-item {
+        width: 50px;
+        height: 80px;
+    }
+    
+    .book-card .book-cover {
+        height: 160px;
+    }
+    
+    .feature-card {
+        min-width: 100%;
+    }
+    
+    .pricing-card {
+        min-width: 100%;
+    }
+    
+    .footer-section {
+        flex-basis: 100%;
+    }
+    
+    .modal-content {
+        width: 95%;
+        padding: 20px;
+    }
+    
+    .book-detail-cover {
+        flex: 0 0 100%;
+        margin-right: 0;
+    }
+    
+    .authors-grid {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .authors-links {
+        flex-direction: column;
+    }
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-10px);
+    }
+    60% {
+        transform: translateY(-5px);
+    }
+}
+
+.cta-button:active {
+    animation: bounce 0.5s;
+}
+
+/* Header Scroll Styles */
+.main-header {
+    transition: transform 0.3s ease;
+}
+
+.main-header.scroll-down {
+    transform: translateY(-100%);
+}
+
+.main-header.scroll-up {
+    transform: translateY(0);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+    .auth-buttons {
+        display: none;
+    }
+
+    .mobile-nav .auth-buttons {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        margin-top: 2rem;
+    }
+
+    .mobile-nav .auth-buttons button {
+        width: 100%;
+    }
+}
+
+/* Kategoriler ve Kitap Serileri Sayfaları */
+.series-page,
+.categories-page {
+    padding: 2rem 0;
+    min-height: calc(100vh - 80px);
+    background: var(--bg-color);
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    padding: 0 1rem;
+}
+
+.section-header h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--text-color);
+    margin: 0;
+}
+.back-button {
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 8px;
+    background: var(--brand-color);
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.back-button:hover {
+    background: var(--brand-color-dark);
+    transform: translateX(-4px);
+}
+
+.categories-grid {
+    display: grid;
+    gap: 2rem;
+    padding: 1rem;
+}
+
+.category-card {
+    background: white;
+    border-radius: 16px;
+    padding: 2rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.category-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+}
+
+.category-card h2 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--text-color);
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid var(--brand-color);
+}
+
+.category-card .book-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1.5rem;
+}
+
+@media (max-width: 768px) {
+    .section-header {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+    }
+    
+    .section-header h1 {
+        font-size: 2rem;
+    }
+    
+    .category-card {
+        padding: 1.5rem;
+    }
+    
+    .category-card h2 {
+        font-size: 1.5rem;
+    }
+    
+    .category-card .book-grid {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    }
+}
+
+@media (min-width: 992px) {
+    .categories-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Modern Footer Styles - REMOVING THIS SECTION */
+.modern-footer, 
+.footer-top, 
+.footer-logo, 
+.footer-sections, 
+.footer-social, 
+.footer-links, 
+.footer-copyright {
+    display: none;
+}
+
+/* Animasyonlar */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideBooks {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1) rotate(5deg);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.animate-in {
+    animation: fadeInUp 0.8s ease-out;
+}
+
+.book-card {
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+/* Spotlight Section için özel stiller */
+.book-showcase:has(.section-header h2:contains("Spot Işıkları Altında")) {
+    background-color: #f9f9f9;
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    margin-top: 40px;
+    margin-bottom: 40px;
+    transition: all 0.5s ease;
+    overflow: hidden;
+}
+
+.book-showcase:has(.section-header h2:contains("Spot Işıkları Altında")).animate-in .book-card {
+    animation: fadeInUp 0.6s ease-out forwards;
+    opacity: 0;
+}
+
+.book-showcase:has(.section-header h2:contains("Spot Işıkları Altında")).animate-in .book-card:nth-child(1) { animation-delay: 0.1s; }
+.book-showcase:has(.section-header h2:contains("Spot Işıkları Altında")).animate-in .book-card:nth-child(2) { animation-delay: 0.2s; }
+.book-showcase:has(.section-header h2:contains("Spot Işıkları Altında")).animate-in .book-card:nth-child(3) { animation-delay: 0.3s; }
+.book-showcase:has(.section-header h2:contains("Spot Işıkları Altında")).animate-in .book-card:nth-child(4) { animation-delay: 0.4s; }
+.book-showcase:has(.section-header h2:contains("Spot Işıkları Altında")).animate-in .book-card:nth-child(5) { animation-delay: 0.5s; }
+.book-showcase:has(.section-header h2:contains("Spot Işıkları Altında")).animate-in .book-card:nth-child(6) { animation-delay: 0.6s; }
+.book-showcase:has(.section-header h2:contains("Spot Işıkları Altında")).animate-in .book-card:nth-child(7) { animation-delay: 0.7s; }
+.book-showcase:has(.section-header h2:contains("Spot Işıkları Altında")).animate-in .book-card:nth-child(8) { animation-delay: 0.8s; }
+.book-showcase:has(.section-header h2:contains("Spot Işıkları Altında")).animate-in .book-card:nth-child(9) { animation-delay: 0.9s; }
+.book-showcase:has(.section-header h2:contains("Spot Işıkları Altında")).animate-in .book-card:nth-child(10) { animation-delay: 1s; }
+
+.book-showcase:has(.section-header h2:contains("Spot Işıkları Altında")) .book-grid {
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    position: relative;
+}
+
+.book-showcase:has(.section-header h2:contains("Spot Işıkları Altında")) .book-card {
+    border: 1px solid #eee;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.book-showcase:has(.section-header h2:contains("Spot Işıkları Altında")) .book-card .book-cover {
+    height: 220px;
+}
+
+/* Yırtıcı Kuşlar Zamanı kitabı için özel stil */
+.book-card:has(img[alt="Yırtıcı Kuşlar Zamanı"]) {
+    position: relative;
+    overflow: hidden;
+}
+
+.book-card:has(img[alt="Yırtıcı Kuşlar Zamanı"]) .book-cover {
+    height: 200px; /* Daha küçük kapak */
+}
+
+.book-card:has(img[alt="Yırtıcı Kuşlar Zamanı"]) .book-info h3 {
+    font-size: 0.85rem;
+    -webkit-line-clamp: 1;
+    height: auto;
+}
+
+.book-card:has(img[alt="Yırtıcı Kuşlar Zamanı"]):hover .book-cover {
+    transform: scale(1.08);
+}
+
+.animate-pulse {
+    animation: pulse 1s ease;
+}
+
+/* Yırtıcı Kuşlar Zamanı kitabı için özel stil */
+.book-card:has(img[alt="Tutunamayanlar"]) {
+    position: relative;
+    overflow: hidden;
+}
+
+.book-card:has(img[alt="Tutunamayanlar"]) .book-cover {
+    height: 200px; /* Daha küçük kapak */
+}
+
+.book-card:has(img[alt="Tutunamayanlar"]) .book-info h3 {
+    font-size: 0.9rem;
+    -webkit-line-clamp: 1;
+    height: auto;
+    color: var(--brand-color);
+    font-weight: bold;
+}
+
+.book-card:has(img[alt="Tutunamayanlar"]):hover .book-cover {
+    transform: scale(1.08);
+}
+
+/* Tutunamayanlar kitabı için özel stil */
+.book-card:has(img[alt="Tutunamayanlar"]) {
+    position: relative;
+    overflow: hidden;
+    border: 1px solid var(--brand-color);
+}
+
+.book-card:has(img[alt="Tutunamayanlar"]) .book-cover {
+    height: 200px; /* Daha küçük kapak */
+}
+
+.book-card:has(img[alt="Tutunamayanlar"]) .book-info h3 {
+    font-size: 0.9rem;
+    -webkit-line-clamp: 1;
+    height: auto;
+    color: var(--brand-color);
+}
+
+.book-card:has(img[alt="Tutunamayanlar"]):hover .book-cover {
+    transform: scale(1.08);
+}
+
+

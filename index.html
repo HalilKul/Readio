@@ -1,0 +1,1006 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Readio: Sesli kitaplar ve e-kitaplar</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="img/dalle-marDbbWJu3.png" type="image/x-icon">
+
+</head>
+<body>
+    <!-- Header -->
+    <header class="main-header">
+        <div class="header-container">
+            <div class="logo">
+                <a href="/">
+                    <img src="#" alt="Readio Logo">
+                </a>
+            </div>
+            <nav class="main-nav">
+                <ul class="nav-links">
+                    <li><a href="#sesli-kitaplar">Sesli Kitaplar</a></li>
+                    <li><a href="#e-kitaplar">E-Kitaplar</a></li>
+                    <li><a href="#kitap-serileri">Kitap Serileri</a></li>
+                    <li><a href="#kategoriler">Kategoriler</a></li>
+                </ul>
+            </nav>
+            <div class="auth-buttons">
+                <a href="#" class="login-link">Giriş Yap</a>
+                <a href="#" class="cta-button">Hemen abone ol</a>
+            </div>
+            <div class="search-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                </svg>
+            </div>
+            <button class="menu-toggle" aria-label="Menüyü aç/kapat">☰</button>
+        </div>
+    </header>
+
+    <!-- Search Overlay -->
+    <div id="searchOverlay" class="search-overlay">
+        <div class="search-container">
+            <div class="search-header">
+                <h2>Kitap Ara</h2>
+                <button class="close-search" aria-label="Aramayı kapat">&times;</button>
+            </div>
+            <div class="search-form">
+                <input type="text" id="searchInput" placeholder="Kitap adı, yazar veya kategori ara..." aria-label="Arama">
+                <button id="searchButton">Ara</button>
+            </div>
+            <div class="search-results" id="searchResults">
+                <!-- Arama sonuçları buraya gelecek -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Book Slider Section -->
+    <section class="book-slider">
+        <div class="slider-container">
+            <div class="book-row">
+                <div class="book-item" data-title="Ustalık Gerektiren Kafaya Takmama Sanatı">
+                    <img src="img/ustalıkgerektiren.jpg" alt="Ustalık Gerektiren Kafaya Takmama Sanatı - Mark Manson">
+                </div>
+                <div class="book-item" data-title="Simyacı">
+                    <img src="img/simyacı.jpeg" alt="Simyacı - Paulo Coelho">
+                </div>
+                <div class="book-item" data-title="Gece Yarısı Kütüphanesi">
+                    <img src="img/geceyarisikutuphanesi.jpg" alt="Gece Yarısı Kütüphanesi - Matt Haig">
+                </div>
+                <div class="book-item" data-title="Hayvan Çiftliği">
+                    <img src="img/hayvanciftligi.jpg" alt="Hayvan Çiftliği - George Orwell">
+                </div>
+                <div class="book-item" data-title="İnsan Ne İle Yaşar">
+                    <img src="img/insanneileyasar.png" alt="İnsan Ne İle Yaşar - Tolstoy">
+                </div>
+                <div class="book-item" data-title="Fareler ve İnsanlar">
+                    <img src="img/farelerveinsanlar.jpeg" alt="Fareler ve İnsanlar - John Steinbeck">
+                </div>
+                <div class="book-item" data-title="Harry Potter">
+                    <img src="img/harrypotter.jpg" alt="Harry Potter - J.K. Rowling">
+                </div>
+                <div class="book-item" data-title="Başka Bir Gün">
+                    <img src="img/başkabirgün.jpeg" alt="Başka bir gün">
+                </div>
+                <div class="book-item" data-title="Suç ve Ceza">
+                    <img src="img/suçveceza.jpg" alt="Suç ve Ceza - Dostoyevski">
+                </div>
+                <div class="book-item" data-title="Sefiller">
+                    <img src="img/sefiller.jpeg" alt="Sefiller - Victor Hugo">
+                </div>
+                <div class="book-item" data-title="Anna Karenina">
+                    <img src="img/annakrenina.jpeg" alt="Anna Karenina - Tolstoy">
+                </div>
+                <div class="book-item" data-title="Don Kişot">
+                    <img src="img/donkişot.png" alt="Don Kişot - Cervantes">
+                </div>
+                <!-- Sonsuz kaydırma için kopyalar -->
+                <div class="book-item" data-title="Ustalık Gerektiren Kafaya Takmama Sanatı">
+                    <img src="img/ustalıkgerektiren.jpg" alt="Ustalık Gerektiren Kafaya Takmama Sanatı - Mark Manson">
+                </div>
+                <div class="book-item" data-title="Simyacı">
+                    <img src="img/simyacı.jpeg" alt="Simyacı - Paulo Coelho">
+                </div>
+                <div class="book-item" data-title="Gece Yarısı Kütüphanesi">
+                    <img src="img/geceyarisikutuphanesi.jpg" alt="Gece Yarısı Kütüphanesi - Matt Haig">
+                </div>
+                <div class="book-item" data-title="Hayvan Çiftliği">
+                    <img src="img/hayvanciftligi.jpg" alt="Hayvan Çiftliği - George Orwell">
+                </div>
+            </div>
+            <div class="book-row" style="animation-direction: reverse; animation-duration: 30s;">
+                <div class="book-item" data-title="Mürebbiye">
+                    <img src="img/mürebbiye.jpeg" alt="Mürebbiye - Stefan Zweig">
+                </div>
+                <div class="book-item" data-title="Küçük Prens">
+                    <img src="img/küçükprens.jpeg" alt="Küçük Prens - Antoine de Saint-Exupéry">
+                </div>
+                <div class="book-item" data-title="Harry Potter">
+                    <img src="img/harrypotter1.jpeg" alt="Harry Potter - J.K. Rowling">
+                </div>
+                <div class="book-item" data-title="Saatleri Ayarlama Enstitüsü">
+                    <img src="img/saatleriayarlamaensitütüsi.jpeg" alt="Saatleri Ayarlama Enstitüsü - Ahmet Hamdi Tanpınar">
+                </div>
+                <div class="book-item" data-title="İçimizdeki Şeytan">
+                    <img src="img/içimizdekişeytan.jpeg" alt="İçimizdeki Şeytan - Sabahattin Ali">
+                </div>
+                <div class="book-item" data-title="Amok Koşucusu">
+                    <img src="img/amokkoşucusu.jpeg" alt="Amok Koşucusu - Stefan Zweig">
+                </div>
+                <div class="book-item" data-title="Rezonans Kanunu">
+                    <img src="img/rezonans kanunu.jpeg" alt="Rezonans Kanunu - Pierre Franckh">
+                </div>
+                <div class="book-item" data-title="Sokrates'in Savunması">
+                    <img src="img/sokratesinsavunması.jpeg" alt="Sokrates'in Savunması">
+                </div>
+                <div class="book-item" data-title="Karamazov Kardeşler">
+                    <img src="img/karamazovkardeşler.jpeg" alt="Karamazov Kardeşler - Fyodor Dostoyevski">
+                </div>
+                <div class="book-item" data-title="Gurur ve Önyargı">
+                    <img src="img/gururveonyargı.jpg" alt="Gurur ve Önyargı - Jane Austen">
+                </div>
+                <div class="book-item" data-title="Monte Kristo Kontu">
+                    <img src="img/montekristokontu.jpeg" alt="Monte Kristo Kontu - Alexandre Dumas">
+                </div>
+                <div class="book-item" data-title="Dune">
+                    <img src="img/dune.jpeg" alt="Dune - Frank Herbert">
+                </div>
+                <!-- Sonsuz kaydırma için kopyalar -->
+                <div class="book-item" data-title="Mürebbiye">
+                    <img src="img/mürebbiye.jpeg" alt="Mürebbiye - Stefan Zweig">
+                </div>
+                <div class="book-item" data-title="Küçük Prens">
+                    <img src="img/küçükprens.jpeg" alt="Küçük Prens - Antoine de Saint-Exupéry">
+                </div>
+                <div class="book-item" data-title="Harry Potter">
+                    <img src="img/harrypotter1.jpeg" alt="Harry Potter - J.K. Rowling">
+                </div>
+                <div class="book-item" data-title="Saatleri Ayarlama Enstitüsü">
+                    <img src="img/saatleriayarlamaensitütüsi.jpeg" alt="Saatleri Ayarlama Enstitüsü - Ahmet Hamdi Tanpınar">
+                </div>
+            </div>
+            <div class="book-row" style="animation-duration: 28s;">
+                <div class="book-item" data-title="Tutunamayanlar">
+                    <img src="img/tutunamayanlar.jpeg" alt="Tutunamayanlar - Oğuz Atay">
+                </div>
+                <div class="book-item" data-title="Şeker Portakalı">
+                    <img src="img/şekerportakalı.jpeg" alt="Şeker Portakalı - José Mauro de Vasconcelos">
+                </div>
+                <div class="book-item" data-title="Empati">
+                    <img src="img/empati.jpeg" alt="Empati - Adam Fawer">
+                </div>
+                <div class="book-item" data-title="Yüzüklerin Efendisi">
+                    <img src="img/yüzüklerinefendisi.jpeg" alt="Yüzüklerin Efendisi - J.R.R. Tolkien">
+                </div>
+                <div class="book-item" data-title="İnferis">
+                    <img src="img/inferis.jpeg" alt="İnferis - Mahfi Eğilmez">
+                </div>
+                <div class="book-item" data-title="Zülfikar'ın Hükmü">
+                    <img src="img/zülfükarınhükmü.jpeg" alt="Zülfikar'ın Hükmü - Saygın Ersin">
+                </div>
+                <div class="book-item" data-title="İnce Memed 1">
+                    <img src="img/incemehmed1.jpeg" alt="İnce Memed 1 - Yaşar Kemal">
+                </div>
+                <div class="book-item" data-title="Suyun Şekli">
+                    <img src="img/suyunşekil.jpeg" alt="Suyun Şekli - Andrea Camilleri">
+                </div>
+                <div class="book-item" data-title="Cerrah">
+                    <img src="img/cerrah.jpeg" alt="Cerrah - Tess Gerritsen">
+                </div>
+                <div class="book-item" data-title="Esir Şehrin İnsanları">
+                    <img src="img/esirşehrininsanları.jpeg" alt="Esir Şehrin İnsanları - Kemal Tahir">
+                </div>
+                <div class="book-item" data-title="Intermezzo">
+                    <img src="img/intermezzoü.jpeg" alt="Intermezzo - Sally Rooney">
+                </div>
+                <div class="book-item" data-title="Beni Gözünüzde Büyütmeyin">
+                    <img src="img/benigözünüzdebüyütmeyin.jpeg" alt="Beni Gözünüzde Büyütmeyin - Gülse Birsel">
+                </div>
+                <!-- Sonsuz kaydırma için kopyalar -->
+                <div class="book-item" data-title="Tutunamayanlar">
+                    <img src="img/tutunamayanlar.jpeg" alt="Tutunamayanlar - Oğuz Atay">
+                </div>
+                <div class="book-item" data-title="Şeker Portakalı">
+                    <img src="img/şekerportakalı.jpeg" alt="Şeker Portakalı - José Mauro de Vasconcelos">
+                </div>
+                <div class="book-item" data-title="Empati">
+                    <img src="img/empati.jpeg" alt="Empati - Adam Fawer">
+                </div>
+                <div class="book-item" data-title="Yüzüklerin Efendisi">
+                    <img src="img/yüzüklerinefendisi.jpeg" alt="Yüzüklerin Efendisi - J.R.R. Tolkien">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Promo Section -->
+    <section class="promo-section">
+        <div class="promo-container">
+            <div class="promo-content">
+                <h1 class="promo-title">İlk 2 ay 99,99/ay</h1>
+                <p class="promo-text">Binlerce sesli kitap ve e-kitap telefonunda ve tabletinde. Sesli kitapların dünyasını ilk 2 ay ₺99,99/ay avantajı ile keşfet.</p>
+                <a href="#" class="promo-button">HEMEN ABONE OL</a>
+            </div>
+            <div class="promo-image">
+                <div class="featured-book">
+                    <img src="img/tutunamayanlar.jpeg" alt="Tutunamayanlar - Oğuz Atay">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Discover Section -->
+    <section class="discover-section">
+        <div class="discover-container">
+            <h2 class="discover-title">Readio<br>dünyasını<br>keşfet:</h2>
+            <ul class="discover-features">
+                <li><span class="check-icon">✔</span> Kids mode</li>
+                <li><span class="check-icon">✔</span> Çevrimdışı modu</li>
+                <li><span class="check-icon">✔</span> İstediğin zaman iptal et</li>
+                <li><span class="check-icon">✔</span> Her yerde erişim</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="pricing" id="pricing">
+        <div class="pricing-container">
+            <div class="pricing-card">
+                <h3>Sınırsız</h3>
+                <p class="pricing-description">Sınırsızca dinlemek ve okumak isteyenler için.</p>
+                <div class="pricing-price">₺99,99 <span class="pricing-period">/ay 2 aylık</span></div>
+                <div class="pricing-after-text">Daha sonra ₺199,99 /ay</div>
+                <div class="pricing-promo">İLK 2 AY ₺99,99/ay</div>
+                <ul class="pricing-features">
+                    <li><span class="icon">👤</span> 1 hesap</li>
+                    <li><span class="icon">∞</span> Sınırsız erişim</li>
+                    <li><span class="icon">✓</span> İstediğin zaman iptal et</li>
+                </ul>
+                <a href="#" class="pricing-button">Abonelik başlat</a>
+            </div>
+            
+            <div class="pricing-card">
+                <h3>Sınırsız Yıllık</h3>
+                <p class="pricing-description">Sınırsızca dinlemek ve okumak isteyenler için.</p>
+                <div class="pricing-price">₺1199,99 <span class="pricing-period">/yıl</span></div>
+                <div class="pricing-promo">6 ay öde, 12 ay dinle</div>
+                <ul class="pricing-features">
+                    <li><span class="icon">👤</span> 1 hesap</li>
+                    <li><span class="icon">∞</span> Sınırsız erişim</li>
+                    <li><span class="icon">✓</span> İstediğin zaman iptal et</li>
+                </ul>
+                <a href="#" class="pricing-button">Abonelik başlat</a>
+            </div>
+            
+            <div class="pricing-card">
+                <h3>Aile (2 hesap)</h3>
+                <p class="pricing-description">Hikayeleri sevdikleri ile paylaşmak isteyenler için.</p>
+                <div class="pricing-price">₺299,99 <span class="pricing-period">/ay</span></div>
+                <ul class="pricing-features">
+                    <li><span class="icon">👥</span> 2 hesap</li>
+                    <li><span class="icon">∞</span> Sınırsız erişim</li>
+                    <li><span class="icon">✓</span> İstediğin zaman iptal et</li>
+                </ul>
+                <a href="#" class="pricing-button">Abonelik başlat</a>
+            </div>
+            
+            <div class="pricing-card">
+                <h3>Aile (3 hesap)</h3>
+                <p class="pricing-description">Hikayeleri sevdikleri ile paylaşmak isteyenler için.</p>
+                <div class="pricing-price">₺379,99 <span class="pricing-period">/ay</span></div>
+                <ul class="pricing-features">
+                    <li><span class="icon">👥</span> 3 hesap</li>
+                    <li><span class="icon">∞</span> Sınırsız erişim</li>
+                    <li><span class="icon">✓</span> İstediğin zaman iptal et</li>
+                </ul>
+                <a href="#" class="pricing-button">Abonelik başlat</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Storytel Original Section -->
+    <section class="storytel-original">
+        <div class="storytel-original-content">
+            <h2>Readio Original</h2>
+            <p>Başka bir yerde bulamayacağın, Readio kullanıcılarına özel oluşturulmuş benzersiz hikayeler seni bekliyor.</p>
+            <a href="#" class="cta-button">Hemen abone ol</a>
+        </div>
+        <div class="storytel-original-books">
+            <div class="book-grid">
+                <div class="book-card">
+                    <img src="img/benikimöldürdü.jpeg" alt="Beni Kim Öldürdü" class="book-cover">
+                    <div class="book-info">
+                        <h3>Beni Kim Öldürdü</h3>
+                        <p>Ahmet Ümit</p>
+                        <button class="book-listen-button">
+                            <span class="headphones-icon">🎧</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="book-card">
+                    <img src="img/1984.jpeg" alt="1984" class="book-cover">
+                    <div class="book-info">
+                        <h3>1984</h3>
+                        <p>George Orwell</p>
+                        <button class="book-listen-button">
+                            <span class="headphones-icon">🎧</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="book-card">
+                    <img src="img/benimgüzelhayaletlerim.jpeg" alt="Ahmet Ümit Kitabı" class="book-cover">
+                    <div class="book-info">
+                        <h3>Benim Güzel Hayaletlerim</h3>
+                        <p>Ahmet Ümit</p>
+                        <button class="book-listen-button">
+                            <span class="headphones-icon">🎧</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="book-card">
+                    <img src="img/ruhikizim.jpeg" alt="Ruh İkizim" class="book-cover">
+                    <div class="book-info">
+                        <h3>Ruh İkizim</h3>
+                        <p>Ayşe Kulin</p>
+                        <button class="book-listen-button">
+                            <span class="headphones-icon">🎧</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Features Cards Section -->
+    <section class="features-cards">
+        <div class="features-container">
+            <div class="feature-card light-blue">
+                <h2>Binlerce kitap her an yanında</h2>
+                <button class="feature-expand-button">+</button>
+            </div>
+            <div class="feature-card light-pink">
+                <h2>Kids Mode özelliği (0-16 yaş)</h2>
+                <button class="feature-expand-button">+</button>
+            </div>
+            <div class="feature-card light-yellow">
+                <h2>Readio Original</h2>
+                <button class="feature-expand-button">+</button>
+            </div>
+        </div>
+        <div class="features-cta">
+            <a href="#" class="cta-button">Hemen abone ol</a>
+        </div>
+    </section>
+
+    <!-- Editors Picks Section -->
+    <section class="book-showcase">
+        <div class="section-header">
+            <h2>Editörün Seçtikleri</h2>
+            <a href="#" class="show-all">Hepsini gör <span class="arrow">→</span></a>
+        </div>
+        <div class="book-grid">
+            <div class="book-card">
+                <img src="img/esirşehrininsanları.jpeg" alt="Esir Şehrin İnsanları" class="book-cover">
+                <div class="book-info">
+                    <h3>Esir Şehrin İnsanları</h3>
+                    <p>Kemal Tahir</p>
+                    <div class="book-rating">
+                        <span class="star">★</span>
+                        <span>4.7</span>
+                    </div>
+                    <button class="book-listen-button">
+                        <span class="headphones-icon">🎧</span>
+                    </button>
+                </div>
+            </div>
+            <div class="book-card">
+                <img src="img/cerrah.jpeg" alt="Cerrah" class="book-cover">
+                <div class="book-info">
+                    <h3>Cerrah</h3>
+                    <p>Tess Gerritsen</p>
+                    <div class="book-rating">
+                        <span class="star">★</span>
+                        <span>4.4</span>
+                    </div>
+                    <button class="book-listen-button">
+                        <span class="headphones-icon">🎧</span>
+                    </button>
+                </div>
+            </div>
+            <div class="book-card">
+                <img src="img/suyunşekil.jpeg" alt="Suyun Şekli" class="book-cover">
+                <div class="book-info">
+                    <h3>Suyun Şekli - Komiser Montalbano 1</h3>
+                    <p>Andrea Camilleri</p>
+                    <div class="book-rating">
+                        <span class="star">★</span>
+                        <span>3.8</span>
+                    </div>
+                    <button class="book-listen-button">
+                        <span class="headphones-icon">🎧</span>
+                    </button>
+                </div>
+            </div>
+            <div class="book-card">
+                <img src="img/incemehmed1.jpeg" alt="İnce Memed 1" class="book-cover">
+                <div class="book-info">
+                    <h3>İnce Memed 1</h3>
+                    <p>Yaşar Kemal</p>
+                    <div class="book-rating">
+                        <span class="star">★</span>
+                        <span>4.9</span>
+                    </div>
+                    <button class="book-listen-button">
+                        <span class="headphones-icon">🎧</span>
+                    </button>
+                </div>
+            </div>
+            <div class="book-card">
+                <img src="img/zülfükarınhükmü.jpeg" alt="Zülfikar'ın Hükmü" class="book-cover">
+                <div class="book-info">
+                    <h3>Zülfikar'ın Hükmü - Yedi Kartal Efsanesi 1. Kitap</h3>
+                    <p>Saygın Ersin</p>
+                    <div class="book-rating">
+                        <span class="star">★</span>
+                        <span>4.7</span>
+                    </div>
+                    <button class="book-listen-button">
+                        <span class="headphones-icon">🎧</span>
+                    </button>
+                </div>
+            </div>
+            <div class="book-card">
+                <img src="img/yüzüklerinefendisi.jpeg" alt="Yüzüklerin Efendisi" class="book-cover">
+                <div class="book-info">
+                    <h3>Yüzüklerin Efendisi: Yüzük Kardeşliği</h3>
+                    <p>J.R.R. Tolkien</p>
+                    <div class="book-rating">
+                        <span class="star">★</span>
+                        <span>4.8</span>
+                    </div>
+                    <button class="book-listen-button">
+                        <span class="headphones-icon">🎧</span>
+                    </button>
+                </div>
+            </div>
+            <div class="book-card">
+                <img src="img/inferis.jpeg" alt="İnferis" class="book-cover">
+                <div class="book-info">
+                    <h3>İnferis</h3>
+                    <p>Mahfi Eğilmez</p>
+                    <div class="book-rating">
+                        <span class="star">★</span>
+                        <span>4.4</span>
+                    </div>
+                    <button class="book-listen-button">
+                        <span class="headphones-icon">🎧</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Spotlight Section -->
+    <section class="book-showcase">
+        <div class="section-header">
+            <h2>Spot Işıkları Altında</h2>
+            <a href="#" class="show-all">Hepsini gör <span class="arrow">→</span></a>
+        </div>
+        <div class="book-grid">
+            <div class="book-card">
+                <img src="img/intermezzoü.jpeg" alt="Intermezzo" class="book-cover">
+                <div class="book-info">
+                    <h3>Intermezzo</h3>
+                    <p>Sally Rooney</p>
+                    <button class="book-listen-button">
+                        <span class="headphones-icon">🎧</span>
+                    </button>
+                </div>
+            </div>
+            <div class="book-card">
+                <img src="img/karamazovkardeşler.jpeg" alt="Karamazov Kardeşler" class="book-cover">
+                <div class="book-info">
+                    <h3>Karamazov Kardeşler</h3>
+                    <p>Fyodor Dostoyevski</p>
+                    <button class="book-listen-button">
+                        <span class="headphones-icon">🎧</span>
+                    </button>
+                </div>
+            </div>
+            <div class="book-card">
+                <img src="img/benigözünüzdebüyütmeyin.jpeg" alt="Beni Gözünüzde Büyütmeyin" class="book-cover">
+                <div class="book-info">
+                    <h3>Beni Gözünüzde Büyütmeyin!</h3>
+                    <p>Gülse Birsel</p>
+                    <button class="book-listen-button">
+                        <span class="headphones-icon">🎧</span>
+                    </button>
+                </div>
+            </div>
+            <div class="book-card">
+                <img src="img/nexus.jpeg" alt="Neksus" class="book-cover">
+                <div class="book-info">
+                    <h3>Neksus</h3>
+                    <p>Yuval Noah Harari</p>
+                    <button class="book-listen-button">
+                        <span class="headphones-icon">🎧</span>
+                    </button>
+                </div>
+            </div>
+            <div class="book-card">
+                <img src="img/sayınrock.jpeg" alt="Sayın Bay Rock Yıldızı" class="book-cover">
+                <div class="book-info">
+                    <h3>Sayın Bay Rock Yıldızı</h3>
+                    <p>Teoman</p>
+                    <button class="book-listen-button">
+                        <span class="headphones-icon">🎧</span>
+                    </button>
+                </div>
+            </div>
+            <div class="book-card">
+                <img src="img/4gün3gece.jpeg" alt="4 Gün 3 Gece" class="book-cover">
+                <div class="book-info">
+                    <h3>4 Gün 3 Gece</h3>
+                    <p>Ayşe Kulin</p>
+                    <button class="book-listen-button">
+                        <span class="headphones-icon">🎧</span>
+                    </button>
+                </div>
+            </div>
+            <div class="book-card" data-book-id="dune">
+                <img src="img/dune.jpeg" alt="Dune" class="book-cover">
+                <div class="book-info">
+                    <h3>Dune</h3>
+                    <p>Frank Herbert</p>
+                    <button class="book-listen-button">
+                        <span class="headphones-icon">🎧</span>
+                    </button>
+                </div>
+            </div>
+            <div class="book-card" data-book-id="tutunamayanlar">
+                <img src="img/tutunamayanlar.jpeg" alt="Tutunamayanlar" class="book-cover">
+                <div class="book-info">
+                    <h3>Tutunamayanlar</h3>
+                    <p>Oğuz Atay</p>
+                    <button class="book-listen-button">
+                        <span class="headphones-icon">🎧</span>
+                    </button>
+                </div>
+            </div>
+            <div class="book-card" data-book-id="seker-portakali">
+                <img src="img/şekerportakalı.jpeg" alt="Şeker Portakalı" class="book-cover">
+                <div class="book-info">
+                    <h3>Şeker Portakalı</h3>
+                    <p>José Mauro de Vasconcelos</p>
+                    <button class="book-listen-button">
+                        <span class="headphones-icon">🎧</span>
+                    </button>
+                </div>
+            </div>
+            <div class="book-card" data-book-id="empati">
+                <img src="img/empati.jpeg" alt="Empati" class="book-cover">
+                <div class="book-info">
+                    <h3>Empati</h3>
+                    <p>Adam Fawer</p>
+                    <button class="book-listen-button">
+                        <span class="headphones-icon">🎧</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Çok Satan Kitaplar Section -->
+    <section class="book-showcase">
+        <div class="section-header">
+            <h2>Çok Satan Kitaplar</h2>
+            <a href="#" class="show-all">Hepsini gör <span class="arrow">→</span></a>
+        </div>
+        <div class="book-grid">
+            <div class="book-card">
+                <img src="img/esirşehrininsanları.jpeg" alt="Esir Şehrin İnsanları" class="book-cover">
+                <div class="book-info">
+                    <h3>Esir Şehrin İnsanları</h3>
+                    <p>Kemal Tahir</p>
+                    <button class="book-listen-button">
+                        <span class="headphones-icon">🎧</span>
+                    </button>
+                </div>
+            </div>
+            <div class="book-card">
+                <img src="img/cerrah.jpeg" alt="Cerrah" class="book-cover">
+                <div class="book-info">
+                    <h3>Cerrah</h3>
+                    <p>Tess Gerritsen</p>
+                    <button class="book-listen-button">
+                        <span class="headphones-icon">🎧</span>
+                    </button>
+                </div>
+            </div>
+            <div class="book-card">
+                <img src="img/suyunşekil.jpeg" alt="Suyun Şekli" class="book-cover">
+                <div class="book-info">
+                    <h3>Suyun Şekli</h3>
+                    <p>Andrea Camilleri</p>
+                    <button class="book-listen-button">
+                        <span class="headphones-icon">🎧</span>
+                    </button>
+                </div>
+            </div>
+            <div class="book-card">
+                <img src="img/incemehmed1.jpeg" alt="İnce Memed 1" class="book-cover">
+                <div class="book-info">
+                    <h3>İnce Memed 1</h3>
+                    <p>Yaşar Kemal</p>
+                    <button class="book-listen-button">
+                        <span class="headphones-icon">🎧</span>
+                    </button>
+                </div>
+            </div>
+            <div class="book-card">
+                <img src="img/zülfükarınhükmü.jpeg" alt="Zülfikar'ın Hükmü" class="book-cover">
+                <div class="book-info">
+                    <h3>Zülfikar'ın Hükmü</h3>
+                    <p>Saygın Ersin</p>
+                    <button class="book-listen-button">
+                        <span class="headphones-icon">🎧</span>
+                    </button>
+                </div>
+            </div>
+            <div class="book-card">
+                <img src="img/yüzüklerinefendisi.jpeg" alt="Yüzüklerin Efendisi" class="book-cover">
+                <div class="book-info">
+                    <h3>Yüzüklerin Efendisi</h3>
+                    <p>J.R.R. Tolkien</p>
+                    <button class="book-listen-button">
+                        <span class="headphones-icon">🎧</span>
+                    </button>
+                </div>
+            </div>
+            
+        </div>
+    </section>
+
+    <!-- Dünya Klasikleri Section -->
+    <section class="book-showcase">
+        <div class="section-header">
+            <h2>Dünya Klasikleri</h2>
+            <a href="#" class="show-all">Hepsini gör <span class="arrow">→</span></a>
+        </div>
+        <div class="book-grid">
+            <div class="book-card">
+                <img src="img/karamazovkardeşler.jpeg" alt="Karamazov Kardeşler" class="book-cover">
+                <div class="book-info">
+                    <h3>Karamazov Kardeşler</h3>
+                    <p>Fyodor Dostoyevski</p>
+                    <div class="book-rating">
+                        <span class="star">★</span>
+                        <span>4.9</span>
+                    </div>
+                    <button class="book-listen-button">
+                        <span class="headphones-icon">🎧</span>
+                    </button>
+                </div>
+            </div>
+            <div class="book-card">
+                <img src="img/suçveceza.jpg" alt="Suç ve Ceza" class="book-cover">
+                <div class="book-info">
+                    <h3>Suç ve Ceza</h3>
+                    <p>Fyodor Dostoyevski</p>
+                    <div class="book-rating">
+                        <span class="star">★</span>
+                        <span>4.8</span>
+                    </div>
+                    <button class="book-listen-button">
+                        <span class="headphones-icon">🎧</span>
+                    </button>
+                </div>
+            </div>
+            <div class="book-card">
+                <img src="img/sefiller.jpeg" alt="Sefiller" class="book-cover">
+                <div class="book-info">
+                    <h3>Sefiller</h3>
+                    <p>Victor Hugo</p>
+                    <div class="book-rating">
+                        <span class="star">★</span>
+                        <span>4.9</span>
+                    </div>
+                    <button class="book-listen-button">
+                        <span class="headphones-icon">🎧</span>
+                    </button>
+                </div>
+            </div>
+            <div class="book-card">
+                <img src="img/annakrenina.jpeg" alt="Anna Karenina" class="book-cover">
+                <div class="book-info">
+                    <h3>Anna Karenina</h3>
+                    <p>Lev Tolstoy</p>
+                    <div class="book-rating">
+                        <span class="star">★</span>
+                        <span>4.7</span>
+                    </div>
+                    <button class="book-listen-button">
+                        <span class="headphones-icon">🎧</span>
+                    </button>
+                </div>
+            </div>
+            <div class="book-card">
+                <img src="img/donkişot.png" alt="Don Kişot" class="book-cover">
+                <div class="book-info">
+                    <h3>Don Kişot</h3>
+                    <p>Miguel de Cervantes</p>
+                    <div class="book-rating">
+                        <span class="star">★</span>
+                        <span>4.8</span>
+                    </div>
+                    <button class="book-listen-button">
+                        <span class="headphones-icon">🎧</span>
+                    </button>
+                </div>
+            </div>
+            <div class="book-card">
+                <img src="img/gururveonyargı.jpg" alt="Gurur ve Önyargı" class="book-cover">
+                <div class="book-info">
+                    <h3>Gurur ve Önyargı</h3>
+                    <p>Jane Austen</p>
+                    <div class="book-rating">
+                        <span class="star">★</span>
+                        <span>4.6</span>
+                    </div>
+                    <button class="book-listen-button">
+                        <span class="headphones-icon">🎧</span>
+                    </button>
+                </div>
+            </div>
+            <div class="book-card">
+                <img src="img/montekristokontu.jpeg" alt="Monte Kristo Kontu" class="book-cover">
+                <div class="book-info">
+                    <h3>Monte Kristo Kontu</h3>
+                    <p>Alexandre Dumas</p>
+                    <div class="book-rating">
+                        <span class="star">★</span>
+                        <span>4.8</span>
+                    </div>
+                    <button class="book-listen-button">
+                        <span class="headphones-icon">🎧</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Popular Authors Section -->
+    <section class="popular-authors">
+        <h2>Sevilen yazar ve seslendirenler</h2>
+        <div class="authors-grid">
+            <div class="author-card">
+                <img src="img/orhanpamuk.jpeg" alt="Orhan Pamuk" class="author-image">
+                <div class="author-name">Orhan<br>Pamuk</div>
+            </div>
+            <div class="author-card">
+                <img src="img/ayşekulin.jpeg" alt="Ayşe Kulin" class="author-image">
+                <div class="author-name">Ayşe<br>Kulin</div>
+            </div>
+            <div class="author-card">
+                <img src="img/yaşar kemal.jpeg" alt="Yaşar Kemal" class="author-image">
+                <div class="author-name">Yaşar<br>Kemal</div>
+            </div>
+            <div class="author-card">
+                <img src="img/Buketuzuner.jpeg" alt="Buket Uzuner" class="author-image">
+                <div class="author-name">Buket<br>Uzuner</div>
+            </div>
+            <div class="author-card">
+                <img src="img/ahmetumit.jpeg" alt="Ahmet Ümit" class="author-image">
+                <div class="author-name">Ahmet<br>Ümit</div>
+            </div>
+        </div>
+        <div class="authors-description">
+            <p>İstediğin kitabı, istediğin kadar dinleyebilir ve okuyabilirsin.<br>Zengin kütüphanemizde her yaştan, her insan için mutlaka bir kitap var.</p>
+        </div>
+        <div class="authors-links">
+            <a href="#" class="author-link">Daha fazla yazara göz at</a>
+            <a href="#" class="narrator-link">Daha fazla seslendirene göz at</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <ul>
+                    <li><a href="#">Hakkımızda</a></li>
+                    <li><a href="#">İletişim</a></li>
+                    <li><a href="#">Destek</a></li>
+                    <li><a href="#">Kariyer</a></li>
+                    <li><a href="#">Yasal</a></li>
+                </ul>
+            </div>
+            <div class="social-icons">
+                <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" aria-label="Dribbble"><i class="fab fa-dribbble"></i></a>
+                <a href="#" aria-label="Behance"><i class="fab fa-behance"></i></a>
+            </div>
+            <div class="newsletter">
+                <input type="email" placeholder="E-posta adresiniz" aria-label="E-posta bülteni">
+                <button type="submit">Abone Ol</button>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Book Detail Modal -->
+    <div id="bookModal" class="modal">
+        <div class="modal-content book-modal">
+            <button class="close-modal" id="closeBookModal" aria-label="Modalı kapat">&times;</button>
+            <div class="book-detail">
+                <div class="book-detail-cover">
+                    <img id="bookCoverImage" src="" alt="Kitap Kapağı">
+                </div>
+                <div class="book-detail-info">
+                    <h2 class="book-detail-title"></h2>
+                    <div class="book-detail-author"></div>
+                    <div class="book-detail-meta">
+                        <div><span>Sayfa:</span> <span id="bookPages">0</span></div>
+                        <div><span>Süre:</span> <span id="bookDuration">0 saat 0 dakika</span></div>
+                        <div><span>Yayın Tarihi:</span> <span id="bookDate">01.01.2023</span></div>
+                        <div><span>Yayınevi:</span> <span id="bookPublisher">Yayınevi</span></div>
+                        <div><span>Dil:</span> <span id="bookLanguage">Türkçe</span></div>
+                    </div>
+                    <div class="book-detail-description"></div>
+                    <div class="book-purchase-options">
+                        <div class="purchase-option audio-option">
+                            <h4>Sesli Kitap</h4>
+                            <div class="purchase-price">59,90₺</div>
+                            <button class="listen-button" id="modalListenButton">
+                                <span class="play-icon">▶</span> Dinle
+                            </button>
+                        </div>
+                        <div class="purchase-option ebook-option">
+                            <h4>E-Kitap</h4>
+                            <div class="purchase-price">49,90₺</div>
+                            <button class="buy-button" id="modalBuyButton">Satın Al</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<!-- Login Modal -->
+<div id="loginModal" class="modal">
+    <div class="modal-content auth-modal">
+        <button class="close-modal" id="closeLoginModal" aria-label="Modalı kapat">&times;</button>
+        <div class="auth-container">
+            <h2>Giriş Yap</h2>
+            <form id="loginForm">
+                <div class="form-group">
+                    <label for="loginEmail">E-posta</label>
+                    <input type="email" id="loginEmail" required placeholder="E-posta adresinizi girin">
+                </div>
+                <div class="form-group">
+                    <label for="loginPassword">Şifre</label>
+                    <input type="password" id="loginPassword" required placeholder="Şifrenizi girin">
+                </div>
+                <div class="form-group remember-me">
+                    <input type="checkbox" id="rememberMe">
+                    <label for="rememberMe">Beni hatırla</label>
+                </div>
+                <button type="submit" class="auth-button">Giriş Yap</button>
+            </form>
+            <div class="auth-links">
+                <a href="#" id="forgotPassword">Şifremi unuttum</a>
+                <a href="#" id="showRegister">Hesabın yok mu? Kayıt ol</a>
+            </div>
+            <div class="social-login">
+                <p>Veya şununla giriş yap:</p>
+                <div class="social-buttons">
+                    <button class="social-button google">Google</button>
+                    <button class="social-button facebook">Facebook</button>
+                    <button class="social-button apple">Apple</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    
+   <!-- Register Modal -->
+<div id="registerModal" class="modal">
+    <div class="modal-content auth-modal">
+        <button class="close-modal" id="closeRegisterModal" aria-label="Modalı kapat">&times;</button>
+        <div class="auth-container">
+            <h2>Hesap Oluştur</h2>
+            <form id="registerForm">
+                <div class="form-group">
+                    <label for="registerName">Ad Soyad</label>
+                    <input type="text" id="registerName" required placeholder="Adınızı ve soyadınızı girin">
+                </div>
+                <div class="form-group">
+                    <label for="registerEmail">E-posta</label>
+                    <input type="email" id="registerEmail" required placeholder="E-posta adresinizi girin">
+                </div>
+                <div class="form-group">
+                    <label for="registerPassword">Şifre</label>
+                    <input type="password" id="registerPassword" required placeholder="Güçlü bir şifre oluşturun">
+                </div>
+                <div class="form-group">
+                    <label for="registerPasswordConfirm">Şifre Tekrar</label>
+                    <input type="password" id="registerPasswordConfirm" required placeholder="Şifrenizi tekrar girin">
+                </div>
+                <div class="form-group terms">
+                    <input type="checkbox" id="agreeTerms" required>
+                    <label for="agreeTerms">Üyelik koşullarını ve gizlilik politikasını kabul ediyorum</label>
+                </div>
+                <button type="submit" class="auth-button">Kayıt Ol</button>
+            </form>
+            <div class="auth-links">
+                <a href="#" id="showLogin">Zaten hesabın var mı? Giriş yap</a>
+            </div>
+        
+        </div>
+    </div>
+</div>
+
+    <!-- Subscription Modal -->
+    <div id="subscriptionModal" class="modal">
+        <div class="modal-content subscription-modal">
+            <span class="close-modal" id="closeSubscriptionModal">&times;</span>
+            <div class="subscription-container">
+                <h2>Abonelik Seçenekleri</h2>
+                <div class="subscription-options">
+                    <div class="subscription-option">
+                        <h3>Sınırsız</h3>
+                        <p>Sınırsızca dinlemek ve okumak isteyenler için.</p>
+                        <div class="subscription-price">₺99,99 <span>/ay 2 aylık</span></div>
+                        <div class="subscription-after">Daha sonra ₺199,99 /ay</div>
+                        <div class="subscription-promo">İLK 2 AY ₺99,99/ay</div>
+                        <ul class="subscription-features">
+                            <li>1 hesap</li>
+                            <li>Sınırsız erişim</li>
+                            <li>İstediğin zaman iptal et</li>
+                        </ul>
+                        <button class="subscription-button" data-plan="unlimited-monthly">Abonelik başlat</button>
+                    </div>
+                    
+                    <div class="subscription-option featured">
+                        <div class="featured-tag">En Popüler</div>
+                        <h3>Sınırsız Yıllık</h3>
+                        <p>Sınırsızca dinlemek ve okumak isteyenler için.</p>
+                        <div class="subscription-price">₺1199,99 <span>/yıl</span></div>
+                        <div class="subscription-promo">6 ay öde, 12 ay dinle</div>
+                        <ul class="subscription-features">
+                            <li>1 hesap</li>
+                            <li>Sınırsız erişim</li>
+                            <li>İstediğin zaman iptal et</li>
+                        </ul>
+                        <button class="subscription-button" data-plan="unlimited-yearly">Abonelik başlat</button>
+                    </div>
+                    
+                    <div class="subscription-option">
+                        <h3>Aile (2 hesap)</h3>
+                        <p>Hikayeleri sevdikleri ile paylaşmak isteyenler için.</p>
+                        <div class="subscription-price">₺299,99 <span>/ay</span></div>
+                        <ul class="subscription-features">
+                            <li>2 hesap</li>
+                            <li>Sınırsız erişim</li>
+                            <li>İstediğin zaman iptal et</li>
+                        </ul>
+                        <button class="subscription-button" data-plan="family-2">Abonelik başlat</button>
+                    </div>
+                </div>
+                <div class="subscription-info">
+                    <p>Tüm abonelikler otomatik olarak yenilenir. İstediğin zaman iptal edebilirsin.</p>
+                    <p>Ödeme bilgilerin güvenle saklanır ve işlenir.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
